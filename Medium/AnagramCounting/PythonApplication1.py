@@ -3,7 +3,8 @@ import string
 
 occurences = {}
 
-for line in iter(input, '\n'):
+for input in iter(input, '\n'):
+	line = input.split
 	denominator = 1
 	
 	for char in string.ascii_letters:
