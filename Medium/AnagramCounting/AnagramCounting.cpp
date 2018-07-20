@@ -1,3 +1,7 @@
+*** This file does not work to pass the tests in Kattis as it does not handle the large ints properly ***
+*** To the best of my knowledge this does compute the anagram correctly just breaks when it gets to the large tests ***
+*** Working version in python can be found in this folder ***
+
 #include <iostream>
 #include <string>
 #include <map>
@@ -37,10 +41,6 @@ int main() {
 	anagrams = factorial(str.length()) / denominator;
 
 	cout << anagrams;
-	
-	/*for (auto const& x : occurences) {
-		cout << x.first << " " << x.second << endl;
-	}*/
 	
 	return 0;
 }
