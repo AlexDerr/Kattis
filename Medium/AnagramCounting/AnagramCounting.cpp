@@ -26,21 +26,28 @@ int main() {
 		occurences.insert(pair<char, int>(ch, 0));
 	}
 
-	cin >> str;
+	while (cin >> str) {
+		// cin >> str;
+		denominator = 1;
 
-	for (char c : str) {
-		occurences[c]++;
-	}
-
-	for (auto const& x : occurences) {
-		if (x.second != 0) {
-			denominator *= factorial(x.second);
+		for (auto &x : occurences) {
+			x.second = 0;
 		}
+
+		for (char c : str) {
+			occurences[c]++;
+		}
+
+		for (auto &x : occurences) {
+			if (x.second != 0) {
+				denominator *= factorial(x.second);
+			}
+		}
+
+		anagrams = factorial(str.length()) / denominator;
+
+		cout << anagrams << endl;
 	}
-
-	anagrams = factorial(str.length()) / denominator;
-
-	cout << anagrams;
 	
 	return 0;
 }
