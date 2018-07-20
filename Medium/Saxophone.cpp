@@ -3,20 +3,18 @@
 #include <string>
 using namespace std;
 
-
 vector<int> setKeys(vector<int> vect, char key) {
 	for (int i = 0; i < vect.size(); i++) {
 		vect[i] = 0;
 	}
-
-	cout << "SetKey" << endl;
+	
 	if (key == 'c') {
-		vect[1]	= 1;
-		vect[2]	= 1;
-		vect[3]	= 1;
-		vect[6]	= 1;
-		vect[7]	= 1;
-		vect[8]	= 1;
+		vect[1] = 1;
+		vect[2] = 1;
+		vect[3] = 1;
+		vect[6] = 1;
+		vect[7] = 1;
+		vect[8] = 1;
 		vect[9] = 1;
 	}
 	else if (key == 'd') {
@@ -35,10 +33,10 @@ vector<int> setKeys(vector<int> vect, char key) {
 		vect[7] = 1;
 	}
 	else if (key == 'f') {
-		 vect[1] = 1;	
-		 vect[2] = 1;	
-		 vect[3] = 1;	
-		 vect[6] = 1;	
+		vect[1] = 1;
+		vect[2] = 1;
+		vect[3] = 1;
+		vect[6] = 1;
 	}
 	else if (key == 'g') {
 		vect[1] = 1;
@@ -52,10 +50,10 @@ vector<int> setKeys(vector<int> vect, char key) {
 	else if (key == 'b') {
 		vect[1] = 1;
 	}
-	else if (key == 'c') {
+	else if (key == 'C') {
 		vect[2] = 1;
 	}
-	else if (key == 'D'){
+	else if (key == 'D') {
 		vect[0] = 1;
 		vect[1] = 1;
 		vect[2] = 1;
@@ -94,7 +92,7 @@ vector<int> setKeys(vector<int> vect, char key) {
 		vect[0] = 1;
 		vect[1] = 1;
 	}
-	
+
 	return vect;
 }
 
@@ -104,7 +102,6 @@ vector<int> addToCount(vector<int> count, vector<int> previous, vector<int> curr
 			count[i]++;
 		}
 	}
-	cout << "add to count" << endl;
 	return count;
 }
 
@@ -117,16 +114,23 @@ int main() {
 	string input;
 
 	cin >> t;
-	
+	cin.ignore();
+
 	for (int i = 0; i < t; i++) {
-		cin >> input;
+		getline(cin, input);
+		if (input.size() == 0) {
+			for (int k = 0; k < count.size(); k++) {
+				cout << count[k] << ' ';
+			}
+			cout << endl;
+			continue;
+		}
+
 		curChar = input.at(0);
 
 		current = setKeys(current, curChar);
 		count = addToCount(count, previous, current);
 		previous = setKeys(previous, curChar);
-
-		cout << count[1] << endl;
 
 		for (int k = 1; k < input.length(); k++) {
 			curChar = input.at(k);
@@ -137,11 +141,11 @@ int main() {
 
 		for (int i = 0; i < 10; i++) {
 			cout << count[i] << ' ';
+			count[i] = 0;
+			previous[i] = 0;
+			current[i] = 0;
 		}
-	}
-
-	for (int i = 0; i < 10; i++) {
-		cout << count[i] << ' ';
+		cout << endl;
 	}
 	return 0;
 }
