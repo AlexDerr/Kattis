@@ -1,6 +1,6 @@
-*** This file does not work to pass the tests in Kattis as it does not handle the large ints properly ***
-*** To the best of my knowledge this does compute the anagram correctly just breaks when it gets to the large tests ***
-*** Working version in python can be found in this folder ***
+// *** This file does not work to pass the tests in Kattis as it does not handle the large ints properly ***
+// *** To the best of my knowledge this does compute the anagram correctly just breaks when it gets to the large tests ***
+// *** Working version in python can be found in this folder ***
 
 #include <iostream>
 #include <string>
