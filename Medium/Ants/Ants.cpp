@@ -44,7 +44,6 @@ int main() {
 		worst = -1;
 		worstIndex = -1;
 
-		
 		for (int j = 0; j < numAnts; j++) {
 			if (positions[j] <= center) {
 				if ((len - positions[j]) > worst) {
