@@ -59,10 +59,7 @@ int main() {
 				}
 			}
 		}
-
 		cout << best << " " << worst << endl;
 	}
-
-
 	return 0;
 }
