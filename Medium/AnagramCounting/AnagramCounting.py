@@ -3,9 +3,7 @@ import string
 import sys
 
 occurences = {}
-sentinel = ''
 
-# for line in '\n'.join(iter(input, sentinel)):
 for line in sys.stdin:
     str = line.splitlines()[0]
     denominator = 1
