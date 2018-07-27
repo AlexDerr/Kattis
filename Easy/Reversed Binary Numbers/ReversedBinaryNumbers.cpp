@@ -16,7 +16,6 @@ int main() {
 		n /= 2;
 	}
 	reverse(str.begin(), str.end());
-	// cout << str;
 
 	for (int i = 0; i < (int)str.length(); i++) {
 		result += (str.at(((int)str.length() - i - 1)) - 48) * pow(2, i);
