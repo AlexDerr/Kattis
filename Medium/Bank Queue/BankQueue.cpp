@@ -1,8 +1,3 @@
-// KattisC++.cpp : Defines the entry point for the console application.
-//
-
-#include <stdafx.h>
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -13,27 +8,12 @@ struct Person {
 	int time;
 };
 
-vector<Person> sortPeople(vector<Person> people, int size) {
-	Person temp;
-	for (int i = 0; i < size - 1; i++) {
-		for (int j = 0; j < size - i - 1; j++) {
-			if (people[i].cash < people[i + 1].cash) {
-				temp = people[i];
-				people[i] = people[i + 1];
-				people[i + 1] = temp;
-			}
-		}
-	}
-	return people;
-}
-
 int main()
 {
-	int n, t, tempCash, tempTime, maxIndex, total = 0;
+	int n, t, tempCash, tempTime, total = 0;
 	Person input;
 	vector<Person> people;
-	vector<Person> sorted;
-	vector<bool> taken (47, false);
+	vector<bool> taken(47, false);
 
 	cin >> n >> t;
 
@@ -45,11 +25,18 @@ int main()
 		people.push_back(input);
 	}
 
-	sorted = sortPeople(people, people.size());
+	Person temp;
+	for (int i = 0; i < people.size() - 1; i++) {
+		for (int j = 1; j < people.size() - i; j++) {
+			if (people[j].cash > people[j - 1].cash) {
+				temp = people[j];
+				people[j] = people[j - 1];
+				people[j - 1] = temp;
+			}
+		}
+	}
 
-
-	//for (int i = 0; i < t - 1; i++) {
-	for (Person p : sorted){
+	for (Person p : people) {
 		tempTime = p.time;
 		while (tempTime >= 0) {
 			if (!taken[tempTime]) {
@@ -63,5 +50,5 @@ int main()
 
 	cout << total;
 
-    return 0;
+	return 0;
 }
