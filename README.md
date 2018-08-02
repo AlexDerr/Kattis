@@ -1,8 +1,6 @@
 # Kattis
 Collection of solved problems from open.kattis.com
 
-** Add link to kattis account **
-
 ## Problems
 | Problem | Difficulty | Languages | :link: |
 | - | - | - | - |
