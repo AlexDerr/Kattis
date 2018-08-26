@@ -1,3 +1,7 @@
+// This Solution is not the most efficient, it can be improved by starting the check with the first number inputted as it is 
+// always included in the longest sequence. Then with this just process the longest list as you read it in, checking greater, 
+// less, or updating the value such as is done in the findLongest method in this version.
+
 #include <iostream>
 #include <vector>
 using namespace std;
