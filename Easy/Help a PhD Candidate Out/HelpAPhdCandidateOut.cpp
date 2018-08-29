@@ -17,7 +17,6 @@ int main()
 		else {
 			left = input.substr(0, input.find('+'));
 			right = input.substr(input.find('+') + 1, input.length() - 1);
-			// cout << "left " << left << " right " << right;
 			l = stoi(left);
 			r = stoi(right);
 			cout << l + r << endl;
