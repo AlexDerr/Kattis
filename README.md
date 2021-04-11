@@ -1,7 +1,7 @@
 # Kattis
 Collection of my solved problems from open.kattis.com
 
-Credit to Jón Steinn Elíasson (JonSteinn on GitHub) for the formatting of this readme
+Credit to Jón Steinn Elíasson (@JonSteinn on GitHub) for the formatting of this readme
 
 ## Problems
 | Problem | Languages | :link: |
